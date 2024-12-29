@@ -1,0 +1,31 @@
+{
+  "name": "MetaPounce",
+  "symbol": "POUNCE",
+  "description": "A playful and dynamic meme coin on the Solana blockchain.",
+  "image": "https://i.ibb.co/Xs74byk/metapoun.png",
+  "external_url": "https://metapounce.info",
+  "attributes": [
+    {
+      "trait_type": "Community",
+      "value": "Strong"
+    },
+    {
+      "trait_type": "Purpose",
+      "value": "Memecoin Fun"
+    }
+  ],
+  "properties": {
+    "creators": [
+      {
+        "address": "FaVKUXJBtBmPdakSuaWpF5hx3cZPpQRSPv2u4DaEeV86",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "https://i.ibb.co/Xs74byk/metapoun.png",
+        "type": "image/png"
+      }
+    ]
+  }
+}
