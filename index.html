@@ -1,245 +1,274 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebChain - Pay Half, Get Free with Referrals!</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Launch Your Website for Half Price - Limited Offer</title>
     <style>
-        .lang-hidden { display: none; }
-        .float-anim {
-            animation: float 3s ease-in-out infinite;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            line-height: 1.6;
         }
-        [data-lang]:not(.active) { display: none; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #34495e;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid #e74c3c;
+        }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .countdown, .spots-left {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .countdown { color: #e74c3c; }
+        .spots-left { color: #3498db; margin-top: 10px; }
+        .offer-section {
+            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .offer-section h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .offer-details ul {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .offer-details li {
+            margin: 15px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .offer-details li:before {
+            content: "✔";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+        }
+        .bonus {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .signup-form {
+            padding: 40px 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .signup-form h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .signup-form input {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px auto;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+        }
+        .signup-form button {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .signup-form button:hover {
+            background: #2980b9;
+        }
+        .refer-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .refer-btn {
+            background: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .refer-btn:hover {
+            background: #219653;
+        }
+        .testimonials, .faq {
+            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .testimonials h2, .faq h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            margin: 20px 0;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .faq-item {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .faq-item h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-indigo-50">
-    <!-- Header -->
-    <header class="sticky top-0 bg-white shadow-sm z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-indigo-600">WebChain</div>
-            <div class="flex items-center gap-4">
-                <button onclick="toggleLanguage('en')" class="lang-toggle en active px-3 py-1 rounded-full bg-indigo-100 text-indigo-600">EN</button>
-                <button onclick="toggleLanguage('es')" class="lang-toggle es px-3 py-1 rounded-full hover:bg-indigo-100">ES</button>
-                <button class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-all">
-                    <span data-lang="en">Get Started</span>
-                    <span data-lang="es" class="lang-hidden">Empezar</span>
-                </button>
-            </div>
-        </nav>
+<body>
+    <header>
+        <div class="container">
+            <h1>Launch Your Website for Half Price!</h1>
+            <div class="countdown" id="countdown">Hurry! Offer Ends Soon</div>
+            <div class="spots-left">Spots Left: <span id="spots">47/50</span></div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-20">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <h1 data-lang="en" class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                    Build Your Website - <span class="text-indigo-600">Pay 50% Now</span>,<br>
-                    <span class="text-indigo-400">0% Later</span> With Referrals!
-                </h1>
-                <h1 data-lang="es" class="lang-hidden text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                    Construye Tu Sitio Web - <span class="text-indigo-600">Paga 50% Ahora</span>,<br>
-                    <span class="text-indigo-400">0% Después</span> ¡Con Referidos!
-                </h1>
-                <div data-lang="en" class="mb-8 text-gray-600 text-lg">
-                    <p>Launch your professional website today. Refer one friend and eliminate your remaining cost!</p>
-                    <div class="mt-4 flex items-center gap-2">
-                        <div class="w-12 h-12 bg-red-500 text-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <span id="spots-left" class="font-bold">47/50 spots remaining</span>
-                    </div>
-                </div>
-                <div data-lang="es" class="lang-hidden mb-8 text-gray-600 text-lg">
-                    <p>Lanza tu sitio web profesional hoy. ¡Refiere un amigo y elimina el costo restante!</p>
-                    <div class="mt-4 flex items-center gap-2">
-                        <div class="w-12 h-12 bg-red-500 text-white rounded-full flex items-center justify-center">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <span id="spots-left-es" class="font-bold">47/50 lugares restantes</span>
-                    </div>
-                </div>
-                <button class="bg-indigo-600 text-white px-8 py-4 rounded-xl text-lg hover:bg-indigo-700 transition-all transform hover:scale-105">
-                    <span data-lang="en">Start Now - 50% Off</span>
-                    <span data-lang="es" class="lang-hidden">Empieza Ahora - 50% Descuento</span>
-                </button>
-            </div>
-            <div class="md:w-1/2 mt-12 md:mt-0">
-                <div class="bg-indigo-600 rounded-2xl p-8 shadow-xl float-anim">
-                    <div class="bg-white rounded-xl p-6 space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold" data-lang="en">You Pay 50%</h3>
-                                <h3 class="font-bold lang-hidden" data-lang="es">Tú Pagas 50%</h3>
-                                <p class="text-gray-600" data-lang="en">$499 initial payment</p>
-                                <p class="text-gray-600 lang-hidden" data-lang="es">Pago inicial de $499</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-1 bg-indigo-100 ml-6"></div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-users text-green-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold" data-lang="en">Refer 1 Friend</h3>
-                                <h3 class="font-bold lang-hidden" data-lang="es">Refiere 1 Amigo</h3>
-                                <p class="text-gray-600" data-lang="en">They get same offer</p>
-                                <p class="text-gray-600 lang-hidden" data-lang="es">Ellos obtienen la misma oferta</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-1 bg-indigo-100 ml-6"></div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-gift text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold" data-lang="en">You Pay $0!</h3>
-                                <h3 class="font-bold lang-hidden" data-lang="es">¡Tú Pagas $0!</h3>
-                                <p class="text-gray-600" data-lang="en">Remaining balance waived</p>
-                                <p class="text-gray-600 lang-hidden" data-lang="es">Saldo restante eliminado</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="offer-section">
+        <div class="container">
+            <h2>The Deal You Can’t Miss</h2>
+            <div class="offer-details">
+                <ul>
+                    <li>Pay just 50% upfront for a custom-built website tailored to your needs—business or personal.</li>
+                    <li>Pay the remaining 50% when your site is complete—<strong>unless</strong> you refer a friend who signs up and pays their 50% deposit within 30 days, then it’s free!</li>
+                    <li>Your referred friends get the same amazing deal, creating a win-win chain.</li>
+                    <li>Limited to the first 50 clients—don’t wait!</li>
+                </ul>
+                <p class="bonus">Special Bonus: First 10 clients get a free domain name (1 year)!</p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-lang="en">How It Works</h2>
-            <h2 class="text-3xl font-bold text-center mb-16 lang-hidden" data-lang="es">Cómo Funciona</h2>
-            
-            <div class="grid md:grid-cols-3 gap-12">
-                <!-- Step 1 -->
-                <div class="p-8 bg-indigo-50 rounded-xl transition-all hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center mb-6">
-                        <span class="text-2xl font-bold">1</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4" data-lang="en">Start Your Project</h3>
-                    <h3 class="text-xl font-bold mb-4 lang-hidden" data-lang="es">Comienza Tu Proyecto</h3>
-                    <p class="text-gray-600" data-lang="en">Secure your spot with 50% upfront payment</p>
-                    <p class="text-gray-600 lang-hidden" data-lang="es">Reserva tu lugar con 50% de pago inicial</p>
-                </div>
+    <section class="signup-form">
+        <div class="container">
+            <h2>Claim Your Spot Now</h2>
+            <form id="signupForm" onsubmit="submitForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Business Name (Optional)">
+                <button type="submit">Sign Up Now</button>
+            </form>
+        </div>
+    </section>
 
-                <!-- Step 2 -->
-                <div class="p-8 bg-green-50 rounded-xl transition-all hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mb-6">
-                        <span class="text-2xl font-bold">2</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4" data-lang="en">Share Referral Link</h3>
-                    <h3 class="text-xl font-bold mb-4 lang-hidden" data-lang="es">Comparte Tu Enlace</h3>
-                    <p class="text-gray-600" data-lang="en">Send your unique link to friends & network</p>
-                    <p class="text-gray-600 lang-hidden" data-lang="es">Envía tu enlace único a amigos y contactos</p>
-                </div>
+    <section class="refer-section">
+        <div class="container">
+            <button class="refer-btn" onclick="generateReferral()">Refer a Friend Now</button>
+            <p>Share this deal and waive your final 50% payment!</p>
+        </div>
+    </section>
 
-                <!-- Step 3 -->
-                <div class="p-8 bg-purple-50 rounded-xl transition-all hover:transform hover:scale-105">
-                    <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center mb-6">
-                        <span class="text-2xl font-bold">3</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4" data-lang="en">Get Full Discount</h3>
-                    <h3 class="text-xl font-bold mb-4 lang-hidden" data-lang="es">Obtén Descuento Total</h3>
-                    <p class="text-gray-600" data-lang="en">We waive your 50% when referral joins</p>
-                    <p class="text-gray-600 lang-hidden" data-lang="es">Eliminamos tu 50% cuando tu referencia se une</p>
-                </div>
+    <section class="testimonials">
+        <div class="container">
+            <h2>What People Say</h2>
+            <div class="testimonial">"I got a stunning website for my bakery at half price—and referred a friend to make it free! Amazing value." – Sarah K.</div>
+            <div class="testimonial">"The referral deal is genius. My site’s live, and I’m already spreading the word!" – Mike T.</div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What’s included in the website?</h3>
+                <p>A fully custom site with up to 5 pages, mobile-friendly design, and basic SEO setup.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does the referral work?</h3>
+                <p>After your site is done, refer a friend. If they sign up and pay their 50% deposit within 30 days, your final 50% is waived.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I don’t refer anyone?</h3>
+                <p>You’ll pay the remaining 50% upon completion—still a great deal!</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="container mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold text-center mb-16" data-lang="en">Frequently Asked Questions</h2>
-        <h2 class="text-3xl font-bold text-center mb-16 lang-hidden" data-lang="es">Preguntas Frecuentes</h2>
-
-        <div class="max-w-3xl mx-auto space-y-6">
-            <!-- FAQ 1 -->
-            <div class="border rounded-xl p-6 hover:bg-gray-50 cursor-pointer" onclick="toggleFAQ(1)">
-                <div class="flex justify-between items-center">
-                    <h3 class="font-bold" data-lang="en">What happens if I don't refer anyone?</h3>
-                    <h3 class="font-bold lang-hidden" data-lang="es">¿Qué pasa si no refiero a nadie?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <p class="mt-4 text-gray-600 hidden" data-faq="1" data-lang="en">
-                    Your remaining 50% will be due 60 days after project completion if no valid referrals are made.
-                </p>
-                <p class="mt-4 text-gray-600 hidden" data-faq="1" data-lang="es">
-                    El 50% restante se deberá pagar 60 días después de completar el proyecto si no se hacen referencias válidas.
-                </p>
-            </div>
-
-            <!-- FAQ 2 -->
-            <div class="border rounded-xl p-6 hover:bg-gray-50 cursor-pointer" onclick="toggleFAQ(2)">
-                <div class="flex justify-between items-center">
-                    <h3 class="font-bold" data-lang="en">Can I refer multiple people?</h3>
-                    <h3 class="font-bold lang-hidden" data-lang="es">¿Puedo referir a varias personas?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <p class="mt-4 text-gray-600 hidden" data-faq="2" data-lang="en">
-                    Yes! Each valid referral earns you $100 credit (up to full balance).
-                </p>
-                <p class="mt-4 text-gray-600 hidden" data-faq="2" data-lang="es">
-                    ¡Sí! Cada referencia válida te da $100 de crédito (hasta cubrir el saldo total).
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-8">
-                <div class="text-2xl font-bold mb-4">WebChain</div>
-                <div class="flex justify-center gap-6 mb-6">
-                    <a href="#" class="hover:text-indigo-400 transition" data-lang="en">Terms</a>
-                    <a href="#" class="hover:text-indigo-400 transition" data-lang="es">Términos</a>
-                    <a href="#" class="hover:text-indigo-400 transition" data-lang="en">Privacy</a>
-                    <a href="#" class="hover:text-indigo-400 transition" data-lang="es">Privacidad</a>
-                </div>
-                <p class="text-gray-400" data-lang="en">© 2023 WebChain. All rights reserved.</p>
-                <p class="text-gray-400 lang-hidden" data-lang="es">© 2023 WebChain. Todos los derechos reservados.</p>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Web Design Service. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Language Toggle
-        function toggleLanguage(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.classList.toggle('lang-hidden', el.dataset.lang !== lang);
-            });
-            document.querySelectorAll('.lang-toggle').forEach(btn => {
-                btn.classList.toggle('active', btn.classList.contains(lang));
-                btn.classList.toggle('bg-indigo-100', btn.classList.contains(lang));
-                btn.classList.toggle('text-indigo-600', btn.classList.contains(lang));
-            });
+        // Countdown Timer
+        const deadline = new Date("March 31, 2025 23:59:59").getTime();
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = deadline - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("countdown").innerText = `Hurry! Offer Ends in ${days} Days, ${hours} Hours`;
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerText = "Offer Expired!";
+                document.querySelector(".signup-form button").disabled = true;
+            }
+        }, 1000);
+
+        // Simulated Spots Left (Static for now; needs backend for real-time)
+        let spotsLeft = 47;
+        document.getElementById("spots").innerText = `${spotsLeft}/50`;
+
+        // Form Submission (Simulated)
+        function submitForm(event) {
+            event.preventDefault();
+            alert("Thank you for signing up! We’ll contact you soon to get started.");
+            spotsLeft--;
+            document.getElementById("spots").innerText = `${spotsLeft}/50`;
+            if (spotsLeft <= 0) {
+                document.querySelector(".signup-form button").disabled = true;
+                document.getElementById("spots").innerText = "All Spots Taken!";
+            }
         }
 
-        // FAQ Toggle
-        function toggleFAQ(num) {
-            const answerEn = document.querySelector(`[data-faq="${num}"][data-lang="en"]`);
-            const answerEs = document.querySelector(`[data-faq="${num}"][data-lang="es"]`);
-            answerEn.classList.toggle('hidden');
-            answerEs.classList.toggle('hidden');
+        // Referral Link Generator (Simulated)
+        function generateReferral() {
+            const referralCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+            const referralLink = `https://yourwebsite.com/refer?code=${referralCode}`;
+            alert(`Share this with your friends: ${referralLink}`);
         }
-
-        // Spots Counter (simulated)
-        let spots = 47;
-        function updateCounter() {
-            document.getElementById('spots-left').textContent = `${spots}/50 spots remaining`;
-            document.getElementById('spots-left-es').textContent = `${spots}/50 lugares restantes`;
-            spots = Math.max(0, spots - 1);
-        }
-        setInterval(updateCounter, 30000); // Update every 30 seconds
     </script>
 </body>
 </html>
